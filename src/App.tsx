@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import AuthContext from './shared/AuthContext';
+import { List } from './page/List';
+import { Page } from "./page/Page";
+import { View } from "./page/View";
+import { Edit } from "./page/Edit";
+import { Settings } from "./page/Settings";
+import { Post } from "./page/Post";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () =>
+  <BrowserRouter>
+    <AuthContext.Provider value={{ authenticated: true }}>
+      <Page>
+        <Switch>
+          <Route path="/settings" children={<Settings />} />
+          <Route path="/post" children={<Post />} />
+          <Route path="/edit/:id" children={<Edit />} />
+          <Route path="/view/:id" children={<View />} />
+          <Route exact path="/" children={<List />} />
+        </Switch>
+      </Page>
+    </AuthContext.Provider>
+  </BrowserRouter>;
 
 export default App;

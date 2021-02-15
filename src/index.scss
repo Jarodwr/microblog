@@ -1,0 +1,146 @@
+$spacing: 0.25em;
+
+$color-header: #D88E6E;
+$color-anchor: #4DA586;
+$color-border: #b6b5ad31;
+$color-text: #DDDCD3;
+$color-background: #2B2D35;
+
+$border-style: 1px solid $color-border;
+
+body {
+  background-color: $color-background;
+  color: $color-text;
+
+  a:link {
+    text-decoration: none;
+    color: $color-anchor;
+  }
+
+  a:visited {
+    color: $color-anchor;
+  }
+
+  input {
+    background-color: $color-background;
+    color: $color-text;
+    border-color: $color-border;
+  }
+
+  textarea {
+    background-color: $color-background;
+    color: $color-text;
+    border-color: $color-border;
+  }
+
+  hr {
+    border: $border-style;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  padding: $spacing;
+
+  .top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+      color: $color-header;
+
+      :visited {
+        color: $color-header;
+      }
+    }
+  }
+
+  .row {
+    margin-bottom: $spacing;
+  }
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .tags>a {
+    margin-right: $spacing;
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    >input {
+      display: block;
+      margin-left: $spacing;
+    }
+  }
+}
+
+.post {
+  border: $border-style;
+  text-align: left;
+  padding: $spacing;
+
+  >.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.settings {
+  input {
+    padding-left: $spacing;
+  }
+}
+
+.editor {
+  .content {
+    display: block;
+    resize: vertical;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 10em;
+  }
+
+  .toolbar {
+    display: flex;
+    justify-content: flex-end;
+    input {
+      margin-right: $spacing;
+    }
+  }
+
+  .preview {
+    border: $border-style;
+    min-height: 1em;
+
+    .header {
+      border-bottom: $border-style;
+      min-height: 1em;
+    }
+  }
+}
+
+.divider {
+  color: $color-border;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}

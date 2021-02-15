@@ -1,0 +1,1 @@
+export const Divider = () => <strong className="divider">{" | "}</strong>
